@@ -199,7 +199,7 @@ mkdir -p $COMPOSER_HOME
 [[ $build_dir == '/app' ]] || ln -s $build_dir/.heroku/php /app/.heroku/php
 
 # Download and compile mailparse extension
-cd $BUILD_DIR
+cd $build_dir
 git clone https://github.com/php/pecl-mail-mailparse.git
 cd pecl-mail-mailparse
 phpize
