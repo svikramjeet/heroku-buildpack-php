@@ -199,7 +199,7 @@ mkdir -p $COMPOSER_HOME
 [[ $build_dir == '/app' ]] || ln -s $build_dir/.heroku/php /app/.heroku/php
 
 # Download and compile mailparse extension
-apt-get install -y php-mailparse
+pecl install mailparse
 
 status "Bootstrapping..."
 
