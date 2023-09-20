@@ -199,19 +199,7 @@ mkdir -p $COMPOSER_HOME
 [[ $build_dir == '/app' ]] || ln -s $build_dir/.heroku/php /app/.heroku/php
 
 # Download and compile mailparse extension
-cd $build_dir
-git clone https://github.com/php/pecl-mail-mailparse.git
-cd pecl-mail-mailparse
-phpize
-./configure
-make
-make install
-
-# Add the mailparse extension to php.ini
-echo "extension=mailparse.so" > $build_dir/.heroku/php/php.ini
-
-# Clean up
-rm -rf $build_dir/pecl-mail-mailparse
+sudo apt-get install -y php-mailparse
 
 status "Bootstrapping..."
 
